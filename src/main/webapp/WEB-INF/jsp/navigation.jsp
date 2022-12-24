@@ -42,7 +42,7 @@
 		          				</a>
 		          				<ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nbDropdown">
 		          					<li> <a class="dropdown-item" href="/HLSP/account/viewuserprofile">Details</a> </li>
-		          					<li> <a class="dropdown-item" href="/HLSP/session/logout">Log out</a> </li>
+		          					<li> <a class="dropdown-item" href="/logout">Log out</a> </li>
 		          				</ul>
 		       				</li>
 		       			</ul>	
@@ -63,7 +63,7 @@
 			       			</ul>
 			       			<ul class="navbar-nav ms-auto">
 			       				<li class="nav-item">
-			          				<a class="nav-link" href="/HLSP/session/loginform">Log in</a>
+			          				<a class="nav-link" href="/loginform">Log in</a>
 			       				</li>
 			       			</ul>		
 				    	</div>
