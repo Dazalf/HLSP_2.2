@@ -39,7 +39,7 @@
 				<div class="pt-3">
 			  		<h4> What are you waiting for? Start now! </h4>
 			  		<div class="pt-3">
-			  			<a class="btn btn-primary" href="/HLSP/account/signupform"> Sign up </a>  
+			  			<a class="btn btn-primary" href="/signupform"> Sign up </a>  
 			  		</div>
 		  		</div>
 		  	</c:if>

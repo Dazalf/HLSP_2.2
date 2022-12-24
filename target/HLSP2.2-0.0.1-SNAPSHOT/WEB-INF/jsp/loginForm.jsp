@@ -59,7 +59,7 @@
 	  		
 	  		<div class="pt-3">  
 		  		<p> Don't have an account? </p>
-		  		<a class="btn btn-primary" href="/HLSP/account/signupform"> Sign up </a>  
+		  		<a class="btn btn-primary" href="/signupform"> Sign up </a>  
 	  		</div>
     	</form>    	
     	

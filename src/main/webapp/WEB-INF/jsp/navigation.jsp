@@ -41,7 +41,7 @@
 		          					Profile
 		          				</a>
 		          				<ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nbDropdown">
-		          					<li> <a class="dropdown-item" href="/HLSP/account/viewuserprofile">Details</a> </li>
+		          					<li> <a class="dropdown-item" href="/account/view">Details</a> </li>
 		          					<li> <a class="dropdown-item" href="/logout">Log out</a> </li>
 		          				</ul>
 		       				</li>

@@ -1,6 +1,8 @@
+eat3160\HLSP22\controller\AccountController.class
 eat3160\HLSP22\controller\SessionController.class
 eat3160\HLSP22\controller\WelcomeController.class
 eat3160\HLSP22\ServletInitializer.class
 eat3160\HLSP22\model\Users.class
 eat3160\HLSP22\Application.class
 eat3160\HLSP22\model\UserBean.class
+eat3160\HLSP22\model\DisabilitiesBean.class
