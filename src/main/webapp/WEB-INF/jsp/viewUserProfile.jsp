@@ -22,9 +22,10 @@
 		
 <!--    This shows a message letting the user know their account has been created successfully. The session attribute is created -->
 <!--    by the Account controller, who redirected the user here after a successful account creation. -->
-    	<c:if test = "${requestScope.SuccessfulProfileUpdate eq true}">
+    	<c:if test = "${SuccessfulProfileUpdate eq true}">
     		<div class="alert alert-success alert-dismissible" role="alert" data-bs-dismiss="alert"> 
     			Profile update has been successful! 
+    			<c:remove var="SuccessfulProfileUpdate" scope="session"/>
     			<button class="btn-close" aria-label="close" data-bs-dismiss="alert"></button>
     		</div>
     	</c:if>
@@ -69,7 +70,7 @@
  		</div>
   			
   		<div class="pt-3">
-  			<a class="btn btn-primary" href="/HLSP/account/edituserprofile" role="button">Edit profile</a>
+  			<a class="btn btn-primary" href="/account/edit" role="button">Edit profile</a>
      	</div>
 	     	 
 	</div>

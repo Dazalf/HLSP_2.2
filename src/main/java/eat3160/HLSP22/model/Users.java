@@ -128,12 +128,12 @@ public class Users {
 	 * @param disability
 	 * @return a string array list that, if any found, contains errors. Otherwise empty.
 	 */
-	public ArrayList<String> registerUser(String fn, String sn, String dob, String email, String password, String experience, String disability) {
+	public ArrayList<String> registerUser(UserBean user) {
 		
-		ArrayList<String> errors = validateFormInput(fn, sn, dob, email, password, experience, disability);
+		ArrayList<String> errors = validateFormInput(user);
 		
 		//Checking if this email address is already in the database. If yes, add an error to the error string. 
-		if(doesEmailExist(email) == true) {
+		if(doesEmailExist(user.getEmail()) == true) {
 			errors.add("\n The inputted email address is not available. Please use a different email address and try again.");
 		}
 		
@@ -143,13 +143,13 @@ public class Users {
 			try {
 				
 				PreparedStatement pstmt = connection.prepareStatement("INSERT INTO users (FirstName, Surname, DateOfBirth, Email, Password, Exercise_experience, Disability) VALUES (?, ?, ?, ?, ?, ?, ?);");
-				pstmt.setString(1, fn);
-				pstmt.setString(2, sn);
-				pstmt.setString(3, dob);
-				pstmt.setString(4, email);
-				pstmt.setString(5, password);
-				pstmt.setString(6, experience);
-				pstmt.setString(7, disability);
+				pstmt.setString(1, user.getFirstName());
+				pstmt.setString(2, user.getSurname());
+				pstmt.setString(3, user.getDateOfBirth());
+				pstmt.setString(4, user.getEmail());
+				pstmt.setString(5, user.getPassword());
+				pstmt.setString(6, user.getExerciseExperience());
+				pstmt.setString(7, user.getDisability());
 				System.out.println(pstmt);
 				pstmt.executeUpdate();
 				
@@ -178,13 +178,13 @@ public class Users {
 	 * @param disability
 	 * @return a string array list that, if any found, contains errors. Otherwise empty.
 	 */
-	public ArrayList<String> updateUser(int userID, String fn, String sn, String dob, String email, String password, String experience, String disability){
+	public ArrayList<String> updateUser(UserBean user, int userID){
 		
-		ArrayList<String> errors = validateFormInput(fn, sn, dob, email, password, experience, disability);
+		ArrayList<String> errors = validateFormInput(user);
 		
 		//Checking if this email address is already in the database, excluding a specified user from the table query. 
 		//If yes, add an error to the error string. 
-		if(doesEmailExist(email, userID) == true) {
+		if(doesEmailExist(user.getEmail(), userID) == true) {
 			errors.add("\n The inputted email address is not available. Please use a different email address and try again.");
 		}
 		
@@ -194,13 +194,21 @@ public class Users {
 				
 				PreparedStatement pstmt = connection.prepareStatement(
 						"UPDATE users SET FirstName = ?, Surname = ?, DateOfBirth = ?, Email = ?, Password = ?, Exercise_experience = ?, Disability = ? WHERE (UserID = ?);");
-				pstmt.setString(1, fn);
-				pstmt.setString(2, sn);
-				pstmt.setString(3, dob);
-				pstmt.setString(4, email);
-				pstmt.setString(5, password);
-				pstmt.setString(6, experience);
-				pstmt.setString(7, disability);
+//				pstmt.setString(1, fn);
+//				pstmt.setString(2, sn);
+//				pstmt.setString(3, dob);
+//				pstmt.setString(4, email);
+//				pstmt.setString(5, password);
+//				pstmt.setString(6, experience);
+//				pstmt.setString(7, disability);
+//				pstmt.setInt(8, userID);
+				pstmt.setString(1, user.getFirstName());
+				pstmt.setString(2, user.getSurname());
+				pstmt.setString(3, user.getDateOfBirth());
+				pstmt.setString(4, user.getEmail());
+				pstmt.setString(5, user.getPassword());
+				pstmt.setString(6, user.getExerciseExperience());
+				pstmt.setString(7, user.getDisability());
 				pstmt.setInt(8, userID);
 				System.out.println(pstmt);
 				pstmt.executeUpdate();
@@ -226,7 +234,15 @@ public class Users {
 	 * @param password
 	 * @return a string array list that, if any found, contains errors. Otherwise empty.
 	 */
-	private ArrayList<String> validateFormInput(String fn, String sn, String dob, String email, String password, String experience, String disability){
+	private ArrayList<String> validateFormInput(UserBean user){
+		
+		String fn = user.getFirstName();
+		String sn = user.getSurname();
+		String dob = user.getDateOfBirth();
+		String email = user.getEmail();
+		String experience = user.getExerciseExperience();
+		String password = user.getPassword();
+		String disability = user.getDisability();
 		
 		ArrayList<String> errors = new ArrayList<>();
 		

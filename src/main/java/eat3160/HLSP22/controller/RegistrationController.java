@@ -8,10 +8,12 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import eat3160.HLSP22.model.UserBean;
 import eat3160.HLSP22.model.Users;
 
 /**
@@ -22,6 +24,11 @@ import eat3160.HLSP22.model.Users;
 
 @Controller
 public class RegistrationController {
+	
+	@ModelAttribute("user")
+	public UserBean createUserObject() {
+		return new UserBean();
+	}
 	
 	@RequestMapping("/signupform")
 	public String getLoginForm(HttpSession session, HttpServletResponse response) 
@@ -38,15 +45,13 @@ public class RegistrationController {
 	}
 	
 	@RequestMapping(value="/registration", method = RequestMethod.POST)
-	public String registerUser(HttpSession session, HttpServletResponse response, Model model, 
-							   @RequestParam String fn, @RequestParam String sn, @RequestParam String dob, 
-							   @RequestParam String email, @RequestParam String pwd, @RequestParam String exp, @RequestParam String disab) 
+	public String registerUser(HttpSession session, HttpServletResponse response, Model model,  @ModelAttribute("user") UserBean user) 
 			throws Exception {
 		
 		if(session.getAttribute("loggedIn") == null || (boolean)session.getAttribute("loggedIn") == false) {
 			
 			Users users = new Users();
-    		ArrayList<String> result = users.registerUser(fn, sn, dob, email, pwd, exp, disab);
+    		ArrayList<String> result = users.registerUser(user);
     		
     		if(result.isEmpty()) {
     			//2.2: If it returns null, it was successful. Redirect them to the login page so they can log in. Session attribute used

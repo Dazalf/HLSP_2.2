@@ -25,15 +25,16 @@
 		 <!-- 	The controller will add an 'error' attribute to the request in the instance any errors were encountered on the server-side that stopped the
     		creation of the new account. As it is an array, we'll loop through the errors and display them on the screen. -->
 	   		
-	   		<c:if test="${!empty errors}">
+	   		<c:if test="${!empty UserProfileErrors}">
 		   		<div class="alert alert-danger alert-dismissible" role="alert" data-bs-dismiss="alert">  
 		   			<span class="fw-bold">Errors</span>
 		   			<br>
 		   			<ul>
-			   			<c:forEach var="error" items="${errors}">
+			   			<c:forEach var="error" items="${UserProfileErrors}">
 			   				<li><c:out value="${error}"/></li>
 			   			</c:forEach>
 		   			</ul>
+		   			<c:remove var="UserProfileErrors" scope="session"/>
 		   			<button class="btn-close" aria-label="close" data-bs-dismiss="alert"></button>
 		   		</div>
 		   	</c:if>
@@ -41,20 +42,20 @@
 		<!-- Store the java bean 'user' from the request scope as a variable named 'user'. --> 
 		<c:set var="user" value="${sessionScope.user}" scope="page"/> 
 
-		<form id="form" action="/HLSP/account/updateprofile" method="POST">
+		<form id="form" action="/account/update" method="POST">
 			<div class="form-group pt-3">
 				<label for="firstname">First name</label>
-				<input type="text" class="form-control" name="fn" id="firstname" value="${user.firstName}" maxlength="45" required>    
+				<input type="text" class="form-control" name="firstName" id="firstname" value="${user.firstName}" maxlength="45" required>    
 			</div> 		
 				 	 		
  			<div class="form-group pt-3">
      			<label for="surname">Surname</label>
-    			<input type="text" class="form-control" name="sn" id="surname" value="${user.surname}" maxlength="45" required>    
+    			<input type="text" class="form-control" name="surname" id="surname" value="${user.surname}" maxlength="45" required>    
  	 		</div>
  	 		
  	 		<div class="form-group pt-3">
      			<label for="dob">Date of birth</label>
-    			<input type="date" class="form-control" name="dob" id="dob" value="${user.dateOfBirth}" onfocus="this.max=new Date().toISOString().split('T')[0]" required>
+    			<input type="date" class="form-control" name="dateOfBirth" id="dob" value="${user.dateOfBirth}" onfocus="this.max=new Date().toISOString().split('T')[0]" required>
  	 		</div>
  	 		
      		<div class="form-group pt-3">
@@ -66,7 +67,7 @@
  	 		
  	  		<div class="form-group pt-3">
  	    		<label for="pwd">Password</label>
- 	    		<input type="password" class="form-control" name="pwd" id="pwd" value="${user.password}" maxlength="45" required>
+ 	    		<input type="password" class="form-control" name="password" id="pwd" value="${user.password}" maxlength="45" required>
  	    		<div class="text-danger" id="pwdRegExError">  </div>
  	  		</div>
  	  		
@@ -78,7 +79,7 @@
 	  		
 	  		<div class="form-group pt-3">
     			<label for="exp">What is your exercise experience?</label>
-   				<select class="form-control" name="exp" id="exp">
+   				<select class="form-control" name="exerciseExperience" id="exp">
    					
   					<!--  Below statements check whether the user bean value of exercise experience is equal to the condition. If true, set the
   						  option as selected. Else, just use non-selected option.  -->
@@ -126,7 +127,7 @@
 	  		
 	  		<div class="form-group pt-3">
 	    		<label for="disab">Do you have a disability? If yes, please specify</label>
-	    		<select class="form-select" aria-label="Default select example" name="disab" id="disabSelection">
+	    		<select class="form-select" aria-label="Default select example" name="disability" id="disabSelection">
 				 
 				 <!-- If the user disability value equals N/A, then have this as selected. If not, leave unselected. -->
 				 <c:choose> 
@@ -161,12 +162,12 @@
  	  		</div>
  	  		
  	  		<div class="pt-3">
- 	  			<a class="btn btn-primary" href="/HLSP/account/viewuserprofile" role="button">Discard changes</a>
+ 	  			<a class="btn btn-primary" href="/account/view" role="button">Discard changes</a>
 	     	</div>
 	     </form>	
 	     
 	     
-	     <form id="deleteUserForm" action="/HLSP/account/deleteuser" method="POST">
+	     <form id="deleteUserForm" action="/account/delete" method="POST">
 	     	
 	     	<!-- Button to trigger the delete account modal -->
 			<div class="pt-3">
