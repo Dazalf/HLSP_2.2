@@ -26,7 +26,7 @@
 		          				<a class="nav-link" href="/HLSP/exercise/exercises">Exercises</a>
 		       				</li>
 		       				<li class="nav-item">
-		          				<a class="nav-link" href="/HLSP/goals/view">Goals</a>
+		          				<a class="nav-link" href="/goals/view">Goals</a>
 		       				</li>
 		       				<li class="nav-item">
 		          				<a class="nav-link" href="/HLSP/analytics/recommendations">Recommendations</a>
