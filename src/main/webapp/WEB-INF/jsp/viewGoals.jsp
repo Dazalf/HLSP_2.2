@@ -5,7 +5,7 @@
 <%@ taglib prefix="f" uri="http://java.sun.com/jsp/jstl/fmt"%>
 
 <!DOCTYPE html>
-<html>
+<html class="h-100">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -13,31 +13,33 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 </head>
   
-  <body>
+  <body class="d-flex flex-column h-100">
   
    	 <jsp:include page="navigation.jsp"/>
     
-     <div class ="container" >
-		<h3> Exercise goals </h3>
+    <main role="main" class="flex-shrink-0">
+	     <div class ="container" >
+			<h3> Exercise goals </h3>
+			
+			<!-- Store the java bean 'goals' from the request scope as a variable named 'goals'. --> 
+			<c:set var="goals" value="${requestScope.goals}" scope="page"/> 
+			
+			<div class="form-group pt-3">
+	 					<label for="Sbepw">Strength based exercises per week:</label>
+						<input type="text" class="form-control" name="Sbepw" id="Sbepw" value="${goals.weeklyStrengthGoal}" readonly>     
+				</div>
 		
-		<!-- Store the java bean 'goals' from the request scope as a variable named 'goals'. --> 
-		<c:set var="goals" value="${requestScope.goals}" scope="page"/> 
-		
-		<div class="form-group pt-3">
- 					<label for="Sbepw">Strength based exercises per week:</label>
-					<input type="text" class="form-control" name="Sbepw" id="Sbepw" value="${goals.weeklyStrengthGoal}" readonly>     
-			</div>
-	
- 		<div class="form-group pt-3">
-   			<label for="Abepw">Aerobic exercises per week:</label>
-  			<input type="text" class="form-control" name="Abepwl" id="Abepwl" value="${goals.weeklyAerobicGoal}" readonly>    
- 		</div>
-  			
-  		<div class="pt-3">
-  			<a class="btn btn-primary" href="/goals/edit" role="button">Edit goals</a>
-     	</div>
-			    	 
-	</div>
+	 		<div class="form-group pt-3">
+	   			<label for="Abepw">Aerobic exercises per week:</label>
+	  			<input type="text" class="form-control" name="Abepwl" id="Abepwl" value="${goals.weeklyAerobicGoal}" readonly>    
+	 		</div>
+	  			
+	  		<div class="pt-3">
+	  			<a class="btn btn-primary" href="/goals/edit" role="button">Edit goals</a>
+	     	</div>
+				    	 
+		</div>
+	</main>
 	
 	<jsp:include page="footer.jsp"/>
     

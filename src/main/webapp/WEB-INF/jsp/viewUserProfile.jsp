@@ -5,7 +5,7 @@
 <%@ taglib prefix="f" uri="http://java.sun.com/jsp/jstl/fmt"%>
 
 <!DOCTYPE html>
-<html>
+<html class="h-100">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -13,67 +13,69 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 </head>
   
-  <body>
+  <body class="d-flex flex-column h-100">
   
    	 <jsp:include page="navigation.jsp"/>
     
-     <div class ="container" >
-		<h3> View your details </h3>
-		
-<!--    This shows a message letting the user know their account has been created successfully. The session attribute is created -->
-<!--    by the Account controller, who redirected the user here after a successful account creation. -->
-    	<c:if test = "${SuccessfulProfileUpdate eq true}">
-    		<div class="alert alert-success alert-dismissible" role="alert" data-bs-dismiss="alert"> 
-    			Profile update has been successful! 
-    			<c:remove var="SuccessfulProfileUpdate" scope="session"/>
-    			<button class="btn-close" aria-label="close" data-bs-dismiss="alert"></button>
-    		</div>
-    	</c:if>
-		
-		<!-- Store the java bean 'user' from the request scope as a variable named 'user'. --> 
-		<c:set var="user" value="${sessionScope.user}" scope="page"/>
-		 
-		 <!-- Using the bean getter methods, display the users data within the view -->
-		<div class="form-group pt-3">
-			<label for="firstname">First name</label>
-			<input type="text" class="form-control" name="fn" id="firstname" value="${user.firstName}" readonly>    
-		</div> 		
-			 	 		
-		<div class="form-group pt-3">
-   			<label for="surname">Surname</label>
-  			<input type="text" class="form-control" name="sn" id="surname" value="${user.surname}" readonly>    
- 		</div>
- 		
- 		<div class="form-group pt-3">
-   			<label for="dob">Date of birth</label>
-  			<input type="date" class="form-control" name="dob" id="dob" value="${user.dateOfBirth}" readonly>
- 		</div>
- 		
-   		<div class="form-group pt-3">
-   			<label for="email">Email address</label>
-  			<input type="email" class="form-control" name="email" id="email" value="${user.email}" readonly>
- 		</div>
- 		
-  		<div class="form-group pt-3">
-    		<label for="pwd">Password</label>
-    		<input type="password" class="form-control" name="pwd" id="pwd" value="${user.password}" readonly>
-  		</div>
-  		
-  		<div class="form-group pt-3">
-   			<label for="exp">Exercise experience</label>	
-    		<input type="text" class="form-control" name="exp" id="exp" value="${user.exerciseExperience}" readonly> 
- 		</div>
-  		
-  		<div class="form-group pt-3">
-    		<label for="disab">Disability</label>
-    		<input type="text" class="form-control" name="disab" id="disabSelection" value="${user.disability}" readonly> 
- 		</div>
-  			
-  		<div class="pt-3">
-  			<a class="btn btn-primary" href="/account/edit" role="button">Edit profile</a>
-     	</div>
-	     	 
-	</div>
+     <main role="main" class="flex-shrink-0">
+	     <div class ="container" >
+			<h3> View your details </h3>
+			
+	<!--    This shows a message letting the user know their account has been created successfully. The session attribute is created -->
+	<!--    by the Account controller, who redirected the user here after a successful account creation. -->
+	    	<c:if test = "${SuccessfulProfileUpdate eq true}">
+	    		<div class="alert alert-success alert-dismissible" role="alert" data-bs-dismiss="alert"> 
+	    			Profile update has been successful! 
+	    			<c:remove var="SuccessfulProfileUpdate" scope="session"/>
+	    			<button class="btn-close" aria-label="close" data-bs-dismiss="alert"></button>
+	    		</div>
+	    	</c:if>
+			
+			<!-- Store the java bean 'user' from the request scope as a variable named 'user'. --> 
+			<c:set var="user" value="${sessionScope.user}" scope="page"/>
+			 
+			 <!-- Using the bean getter methods, display the users data within the view -->
+			<div class="form-group pt-3">
+				<label for="firstname">First name</label>
+				<input type="text" class="form-control" name="fn" id="firstname" value="${user.firstName}" readonly>    
+			</div> 		
+				 	 		
+			<div class="form-group pt-3">
+	   			<label for="surname">Surname</label>
+	  			<input type="text" class="form-control" name="sn" id="surname" value="${user.surname}" readonly>    
+	 		</div>
+	 		
+	 		<div class="form-group pt-3">
+	   			<label for="dob">Date of birth</label>
+	  			<input type="date" class="form-control" name="dob" id="dob" value="${user.dateOfBirth}" readonly>
+	 		</div>
+	 		
+	   		<div class="form-group pt-3">
+	   			<label for="email">Email address</label>
+	  			<input type="email" class="form-control" name="email" id="email" value="${user.email}" readonly>
+	 		</div>
+	 		
+	  		<div class="form-group pt-3">
+	    		<label for="pwd">Password</label>
+	    		<input type="password" class="form-control" name="pwd" id="pwd" value="${user.password}" readonly>
+	  		</div>
+	  		
+	  		<div class="form-group pt-3">
+	   			<label for="exp">Exercise experience</label>	
+	    		<input type="text" class="form-control" name="exp" id="exp" value="${user.exerciseExperience}" readonly> 
+	 		</div>
+	  		
+	  		<div class="form-group pt-3">
+	    		<label for="disab">Disability</label>
+	    		<input type="text" class="form-control" name="disab" id="disabSelection" value="${user.disability}" readonly> 
+	 		</div>
+	  			
+	  		<div class="pt-3">
+	  			<a class="btn btn-primary" href="/account/edit" role="button">Edit profile</a>
+	     	</div>
+		     	 
+		</div>
+	</main>
 	
 	<jsp:include page="footer.jsp"/>
     

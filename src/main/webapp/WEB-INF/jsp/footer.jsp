@@ -1,13 +1,5 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="/footer.css" />
-  </head>
-  <body>
-  
-	<footer id="footer" class="bg-light">
+
+	<footer class="footer mt-auto py-3 bg-light">
 		<div class="container">
 			<div class="row">
 				<div class="col-sm text-center fw-light">
@@ -16,9 +8,7 @@
 			</div>
 		</div>
 	</footer>
-    
-  </body>
-</html>
+
 
 
     

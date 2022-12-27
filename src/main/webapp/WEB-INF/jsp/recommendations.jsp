@@ -5,51 +5,54 @@
 <%@ taglib prefix="f" uri="http://java.sun.com/jsp/jstl/fmt"%>
 
 <!DOCTYPE html>
-<html>
+<html class="h-100">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Recommendations</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
   </head>
-  <body>
+  <body class="d-flex flex-column h-100">
     
  
     <jsp:include page="navigation.jsp"/>
     
-     <div class="container pt-3">
-     	<h3> Recommendations table</h3>
-     	<div class="table-responsive-sm pt-3">  
-			<table class="table table-dark">
-			  <thead>
-			    <tr>
-			      <th scope="col">ID</th>
-			      <th scope="col">Title</th>
-			      <th scope="col">Link</th>
-			    </tr>
-			  </thead>
-			  <tbody>
-			    <tr>
-			      <th scope="row">1</th>
-			      <td>Article title 1</td>
-			      <td>Link 1</td>
+    <main role="main" class="flex-shrink-0">
+	     <div class="container pt-3">
+	     	
+	     	<h3> Recommendations table</h3>
+	     	<div class="table-responsive-sm pt-3">  
+				<table class="table table-hover table-striped caption-top">
+				  <thead class="table-light">
+				    <tr>
+				      <th scope="col">ID</th>
+				      <th scope="col">Title</th>
+				      <th scope="col">Link</th>
+				    </tr>
+				  </thead>
+				  <tbody>
+				    <tr>
+				      <th scope="row">1</th>
+				      <td>Article title 1</td>
+				      <td>Link 1</td>
+		
+				    </tr>
+				    <tr>
+				      <th scope="row">2</th>
+				      <td>Article title 2</td>
+				      <td>Link 2</td>
 	
-			    </tr>
-			    <tr>
-			      <th scope="row">2</th>
-			      <td>Article title 2</td>
-			      <td>Link 2</td>
-
-			    </tr>
-			    <tr>
-			      <th scope="row">3</th>
-			      <td>Article title 3</td>
-			      <td>Link 3</td>
-			    </tr>
-			  </tbody>
-			</table>
+				    </tr>
+				    <tr>
+				      <th scope="row">3</th>
+				      <td>Article title 3</td>
+				      <td>Link 3</td>
+				    </tr>
+				  </tbody>
+				</table>
+			</div>
 		</div>
-	</div>
+	</main>
     
     <jsp:include page="footer.jsp"/>
     

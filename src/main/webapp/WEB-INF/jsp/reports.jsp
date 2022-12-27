@@ -5,42 +5,41 @@
 <%@ taglib prefix="f" uri="http://java.sun.com/jsp/jstl/fmt"%>
 
 <!DOCTYPE html>
-<html>
+<html class="h-100">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Log in</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
   </head>
-  <body>
+  <body class="d-flex flex-column h-100">
     
     
     <jsp:include page="navigation.jsp"/>
     
-    
-    <div class ="container pt-3">
-    
-	    
-	  	<form action="#">
-		  	<label for="selectGraph"> Choose a graph: </label>
-		  	<select name="selectGraph" id="selectGraph"> 
-		  		<option value="strength">Number of strength-training exercises completed</option>
-		  		<option value="aerobic">Number of aerobic exercises completed</option>
-		  		<option value="exercises">Number of exercises completed</option>
-		  		<option value="exercisegoal">Number of exercises completed against the set goal over the most recent week</option>
-		  	</select>
-			<br>
-			<label class="pt-3" for="selectPeriod"> Choose time period: </label>
-		  	<select name="selectPeriod" id="selectPeriod"> 
-		  		<option value="7days">Last 7 days</option>
-		  		<option value="30days">Last 30 days</option>
-		  	</select>
-	  	</form>
-	    
-	    
-	    <p class="pt-3"> WIP: Visualizations of inputted data, i.e., charts, will be here. </p> 	
-    	
-    </div>
+    <main role="main" class="flex-shrink-0">
+	    <div class ="container pt-3">
+	     
+		  	<form action="#">
+			  	<label for="selectGraph"> Choose a graph: </label>
+			  	<select name="selectGraph" id="selectGraph"> 
+			  		<option value="strength">Number of strength-training exercises completed</option>
+			  		<option value="aerobic">Number of aerobic exercises completed</option>
+			  		<option value="exercises">Number of exercises completed</option>
+			  		<option value="exercisegoal">Number of exercises completed against the set goal over the most recent week</option>
+			  	</select>
+				<br>
+				<label class="pt-3" for="selectPeriod"> Choose time period: </label>
+			  	<select name="selectPeriod" id="selectPeriod"> 
+			  		<option value="7days">Last 7 days</option>
+			  		<option value="30days">Last 30 days</option>
+			  	</select>
+		  	</form>
+		     
+		    <p class="pt-3"> WIP: Visualizations of inputted data, i.e., charts, will be here. </p> 	
+	    	
+	    </div>
+	</main>
     
     <jsp:include page="footer.jsp"/>
     
