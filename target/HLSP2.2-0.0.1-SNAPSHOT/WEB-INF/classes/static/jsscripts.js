@@ -45,7 +45,7 @@
 //This method will make an AJAX call to the Account Controller to identify whether the email that's been inputted by the user is valid. 
 //The expected response from the server is simply a boolean value. 
 function isEmailAvailable(email){
-	jQuery.post("/HLSP/account/validateSignInEmail", {"email":email}, processEmailResponse);
+	jQuery.post("/isEmailAvailable", {"email":email}, processEmailResponse);
 	console.log(email);
 }
 
@@ -54,7 +54,7 @@ function isEmailAvailable(email){
 //This method will make an AJAX call to the Account Controller to identify whether the email that's been inputted by the user is valid. 
 //The expected response from the server is simply a boolean value. 
 function isEmailAvailableExcludingLoggedInUser(email){
-	jQuery.post("/HLSP/account/validateEditProfileEmail", {"email":email}, processEmailResponse);
+	jQuery.post("/account/isEmailAvailable", {"email":email}, processEmailResponse);
 }
 
 /**

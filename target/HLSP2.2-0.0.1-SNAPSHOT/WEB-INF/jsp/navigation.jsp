@@ -23,10 +23,10 @@
 		          				<a class="nav-link" href="/homepage">About us</a>
 		       				</li>
 		       				<li class="nav-item">
-		          				<a class="nav-link" href="/HLSP/exercise/exercises">Exercises</a>
+		          				<a class="nav-link" href="/exercises/view">Exercises</a>
 		       				</li>
 		       				<li class="nav-item">
-		          				<a class="nav-link" href="/HLSP/goals/view">Goals</a>
+		          				<a class="nav-link" href="/goals/view">Goals</a>
 		       				</li>
 		       				<li class="nav-item">
 		          				<a class="nav-link" href="/HLSP/analytics/recommendations">Recommendations</a>
@@ -41,7 +41,7 @@
 		          					Profile
 		          				</a>
 		          				<ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nbDropdown">
-		          					<li> <a class="dropdown-item" href="/HLSP/account/viewuserprofile">Details</a> </li>
+		          					<li> <a class="dropdown-item" href="/account/view">Details</a> </li>
 		          					<li> <a class="dropdown-item" href="/logout">Log out</a> </li>
 		          				</ul>
 		       				</li>

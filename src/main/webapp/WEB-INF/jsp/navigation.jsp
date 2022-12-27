@@ -23,16 +23,16 @@
 		          				<a class="nav-link" href="/homepage">About us</a>
 		       				</li>
 		       				<li class="nav-item">
-		          				<a class="nav-link" href="/HLSP/exercise/exercises">Exercises</a>
+		          				<a class="nav-link" href="/exercises/view">Exercises</a>
 		       				</li>
 		       				<li class="nav-item">
 		          				<a class="nav-link" href="/goals/view">Goals</a>
 		       				</li>
 		       				<li class="nav-item">
-		          				<a class="nav-link" href="/HLSP/analytics/recommendations">Recommendations</a>
+		          				<a class="nav-link" href="/recommendations">Recommendations</a>
 		       				</li>
 		       				<li class="nav-item">
-		          				<a class="nav-link" href="/HLSP/analytics/report">Reports</a>
+		          				<a class="nav-link" href="/reports">Reports</a>
 		       				</li>
 		       			</ul>
 						<ul class="navbar-nav ms-auto">

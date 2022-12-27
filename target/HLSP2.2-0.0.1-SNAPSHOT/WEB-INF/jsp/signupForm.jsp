@@ -21,7 +21,7 @@
     
     <div class ="container pt-3">
     	
-    	<form id="form" action="/registration" method="GET">
+    	<form id="form" action="/registration" method="POST">
     	
     		 <h3> Sign up form </h3>
     		
@@ -43,12 +43,12 @@
 	 		
 	 		<div class="form-group pt-3">
     			<label for="firstname">First name</label>
-   				<input type="text" class="form-control" name="fn" id="firstname" placeholder="Input first name" maxlength="45" required>
+   				<input type="text" class="form-control" name="firstName" id="firstname" placeholder="Input first name" maxlength="45" required>
 	 		</div>
 	 		
 	 		<div class="form-group pt-3">
     			<label for="surname">Surname</label>
-   				<input type="text" class="form-control" name="sn" id="surname" placeholder="Input surname" maxlength="45" required>
+   				<input type="text" class="form-control" name="surname" id="surname" placeholder="Input surname" maxlength="45" required>
 	 		</div>
 	 		
 	 		<div class="form-group pt-3">
@@ -56,7 +56,7 @@
     		
 <!--     		The onfocus, and accompanying code, is used to ensure that a user cannot input a date in the future. 
 				The inspiration for this code is taken from the following stackoverflow article: https://stackoverflow.com/questions/32378590/set-date-input-fields-max-date-to-today -->
-   				<input type="date" class="form-control" name="dob" id="dob" placeholder="Input date of birth" onfocus="this.max=new Date().toISOString().split('T')[0]" required>
+   				<input type="date" class="form-control" name="dateOfBirth" id="dob" placeholder="Input date of birth" onfocus="this.max=new Date().toISOString().split('T')[0]" required>
 	 		
 	 	</div>
 	 		
@@ -69,7 +69,7 @@
 	 		
 	  		<div class="form-group pt-3">
 	    		<label for="pwd">Password</label>
-	    		<input type="password" class="form-control" name="pwd" id="pwd" placeholder="Password" maxlength="45" required>
+	    		<input type="password" class="form-control" name="password" id="pwd" placeholder="Password" maxlength="45" required>
 	    		<div class="text-danger" id="pwdRegExError">  </div>
 	  		</div>
 	  		
@@ -81,7 +81,7 @@
 	  		
 	  		<div class="form-group pt-3">
     			<label for="exp">What is your exercise experience?</label>
-   				<select class="form-control" name="exp" id="exp">
+   				<select class="form-control" name="exerciseExperience" id="exp">
    					<option value="None">None</option>
    					<option value="Novice">Novice</option>
       				<option value="Intermediate">Intermediate</option>
@@ -94,7 +94,7 @@
 	  		
 	  		<div class="form-group pt-3">
 	    		<label for="disab">Do you have a disability? If yes, please specify</label>
-	    		<select class="form-select" aria-label="Default select example" name="disab" id="disabSelection">
+	    		<select class="form-select" aria-label="Default select example" name="disability" id="disabSelection">
 				  
 				  <option value="N/A">No</option>
  			  
