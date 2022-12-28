@@ -18,35 +18,108 @@
    	 <jsp:include page="navigation.jsp"/>
      
      <main role="main" class="flex-shrink-0">
-	     <div class ="container">
-			<div class="text-center" id="welcometext">
-				<div>
-					<div class="col">
-						<h1> Take your exercise routine to the next level </h1>
-					</div>
-				</div>
+	     
+	     <section class="bg-dark text-light text-center p-4">
+	     	<div class="container">
+	     		<div class="row">
+	     			<div class="col-12">
+	     				<h1> <span class="text-success"> Level up </span>  your exercise routine</h1>
+	     			</div>
+	     			<div class="col pt-3">
+						<p> 
+							HLSP is a service that provides personalized exercise recommendations all based of the information you provide us.
+							With us, you can easily track your exercises each day, let us know your exercising preferences e.g., 
+							whether you go to your gym or the park and set your goals! 
+							We pride ourselves on our quick and easy to use design to enable the best use of time in your busy lifestyle 
+						</p>
+						<c:if test="${sessionScope.loggedIn ne true}">
+							<div class="row">
+								<div class="col">
+							  		<div class="pt-3">
+							  			<a class="btn btn-success btn-lg" href="/signupform"> Sign up now </a>  
+							  		</div>
+						  		</div>
+						  	</div>
+					  	</c:if>						
+	     			</div>
+	     		</div>
+	     	</div>
+	     </section>
+	     
+	     <section class="p-5 text-center">
+	     	<div class="container">
+		     	<div class="row">
+		     		<div class="col">
+						<div class="card text-white bg-success mb-3" style="max-width: 25rem;">
+						  <div class="card-header bg-dark">Exercise routine</div>
+						  <div class="card-body">
+						  	<h5 class="card-title">Exercises</h5>
+						    <p class="card-text">Provide rich detail about your exercises in your exercise routine through our interface. The more we know,
+						    the more personalised the recommendations. You can easily view all of your exercises.  </p>
+						  </div>
+						</div>	     			
+		     		</div>
+		     		<div class="col">
+						<div class="card text-white bg-success mb-3" style="max-width: 25rem;">
+						  <div class="card-header bg-dark">Exercise routine</div>
+						  <div class="card-body">
+						  	<h5 class="card-title">Goals</h5>
+						    <p class="card-text">We provide you an easy way to for you to set and track your goals. Not too sure about what goals to choose?
+						    We're here to help with our own quiz that provides recommended goals.</p>
+						  </div>
+						</div>	         		
+		     		</div>
+		     		<div class="col">
+						<div class="card text-white bg-success mb-3" style="max-width: 25rem;">
+						  <div class="card-header bg-dark">Exercise routine</div>
+						  <div class="card-body">
+						  	<h5 class="card-title">Disabilites</h5>
+						    <p class="card-text">Have any disabilities? We provide you with the option to specify these when setting up your account. This
+						    ensures this is taken into consideration when providing recommendations. </p>
+						  </div>
+						</div>		     		
+		     		</div>
+		     	</div>
+		     	
+		     	<div class="row">
+		     		<div class="col">
+						<div class="card text-white bg-success mb-3 text-center" style="max-width: 25rem;">
+						  <div class="card-header bg-dark">Analytics</div>
+						  <div class="card-body">
+						  	<h5 class="card-title">Recommendations</h5>
+						    <p class="card-text"> The more we know, the more you benefit! Our algorithms will aggregate, review and analyse the information
+						    you give us, and provide high-quality recommendations from trusted new sources that we can gurantee will <span class="fw-bold"> level up </span> 
+						    your exercise routine.</p>
+						  </div>
+						</div>	     			
+		     		</div>
+		     		<div class="col">
+						<div class="card text-white bg-success mb-3 text-center" style="max-width: 25rem;">
+						  <div class="card-header bg-dark">Analytics</div>
+						  <div class="card-body">
+						  	<h5 class="card-title">Reports</h5>
+						    <p class="card-text">With the collated data you've provided, we transform it into easy-to-read visualizations to enable to draw your 
+						    own insights into your data!</p>
+						  </div>
+						</div>	         		
+		     		</div>
+		     		   <div class="col">
+						<div class="card text-white bg-success mb-3 text-center" style="max-width: 25rem;">
+						  <div class="card-header bg-dark">Usability</div>
+						  <div class="card-body">
+						  	<h5 class="card-title">Website design</h5>
+						    <p class="card-text">We've endeavoured to make our website as simple and easy to use as possible, ensuring that your
+						    experience using our service is as seamless and enjoyable as possbile. </p>
+						  </div>
+						</div>		     		
+		     		</div>
+		     	</div>
+	     	</div>
+	     </section>
+	    
 				
-				<div class="row pt-5">
-					<div class="col">
-						<h2> Who are we? </h2>
-						<p> HLSP is a service that provides personalized exercise recommendations all based of the information you provide us.</p>
-						<p> With us, you can easily track your exercises each day, let us know your exercising preferences e.g., 
-							whether you go to your gym or the park and set your goals! </p> 
-						<p> We pride ourselves on our quick and easy to use design to enable the best use of time in your busy lifestyle </p>
-					</div>
-				</div>
-				
-				<c:if test="${sessionScope.loggedIn ne true}">
-					<div class="pt-3">
-				  		<h4> What are you waiting for? Start now! </h4>
-				  		<div class="pt-3">
-				  			<a class="btn btn-primary" href="/signupform"> Sign up </a>  
-				  		</div>
-			  		</div>
-			  	</c:if>
-				
-			</div>
-		</div>
+
+			
 	</main>
 	
 	<jsp:include page="footer.jsp"/>

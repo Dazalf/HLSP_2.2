@@ -1,5 +1,5 @@
 
-	<footer class="footer mt-auto py-3 bg-light">
+	<footer class="footer mt-auto bg-dark text-light">
 		<div class="container">
 			<div class="row">
 				<div class="col-sm text-center fw-light">
