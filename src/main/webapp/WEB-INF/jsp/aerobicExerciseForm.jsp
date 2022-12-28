@@ -16,10 +16,10 @@
     
     <jsp:include page="navigation.jsp"/>
     
-    <main role="main" class="flex-shrink-0">
-	    <div class ="container pt-3">
+    <main role="main" class="flex-shrink-0 my-auto">
+	    <div class ="container pt-3 border">
 	    
-		    <h3> Add aerobic exercise </h3>
+		    <h3 class="py-3"> Add aerobic exercise </h3>
 	    	
 	    	<form action="/exercises/add/aerobic_exercise" method="POST">
 	    	
@@ -28,7 +28,19 @@
 	   				<input type="text" class="form-control" name="exerciseName" id="exerciseName" placeholder="Input exercise name" required>
 		 		</div>
 		 		
-		 		<div class="form-group pt-3">
+		 		<div class="row py-3">
+			  		<div class="form-group col">
+			    		<label for="stepC">Amount of steps</label>
+			    		<input type="number" class="form-control" name="steps" id="steps" min="0">
+			  		</div>
+			  		
+			  		<div class="form-group col">
+			    		<label for="date">Choose exercise date</label>
+			    		<input type="date" class="form-control" name="dateOfExercise" id="date" value="${requestScope.todaysDate}" onfocus="this.max=new Date().toISOString().split('T')[0]" required>
+			  		</div>
+		  		</div>
+		 		
+		 		<div class="form-group py-3">
 		    		<label>Where did you exercise?</label>
 		    		<div class="form-check">
 					  <input class="form-check-input" type="radio" value="Home" name="location" id="locationRadioHome" checked="checked">
@@ -48,16 +60,6 @@
 					    Park
 					  </label>
 					</div>
-		  		</div>
-		 		
-		  		<div class="form-group">
-		    		<label for="stepC">Amount of steps</label>
-		    		<input type="number" class="form-control" name="steps" id="steps" min="0">
-		  		</div>
-		  		
-		  		<div class="form-group">
-		    		<label for="date">Choose exercise date</label>
-		    		<input type="date" class="form-control" name="dateOfExercise" id="date" value="${requestScope.todaysDate}" onfocus="this.max=new Date().toISOString().split('T')[0]" required>
 		  		</div>
 		  		
 	  			<div class="form-check form-switch pt-3">

@@ -228,7 +228,8 @@ public class ExerciseController {
 	
 	@RequestMapping(value = "/update/aerobic_exercise", method = RequestMethod.POST)
 	public String updateAerobicExercise(HttpSession session, HttpServletResponse response, @RequestParam String exerciseName, @RequestParam String location,
-			@RequestParam(defaultValue = "0") int steps, @RequestParam String dateOfExercise, @RequestParam(defaultValue = "0") String favourite) 
+			@RequestParam(defaultValue = "0") int steps, @RequestParam String dateOfExercise, @RequestParam(defaultValue = "0") String favourite,
+			@RequestParam int exerciseID) 
 			throws Exception {
 		
 		if(session.getAttribute("loggedIn") == null || (boolean)session.getAttribute("loggedIn") == false) {
@@ -252,9 +253,8 @@ public class ExerciseController {
 			}
 			
 			AerobicExercises ae = new AerobicExercises();
-			int userid = (Integer)session.getAttribute("userID");
 			
-			ae.update(userid, exerciseName, location, steps, dateOfExercise, favouriteBoolean);
+			ae.update(exerciseID, exerciseName, location, steps, dateOfExercise, favouriteBoolean);
     		
     		//Add an attribute to the request to let them exercise page know there was a successful exercise creation. 
     		session.setAttribute("SuccessfulExerciseUpdate", "Aerobic exercise updated successfully!");
@@ -266,7 +266,7 @@ public class ExerciseController {
 	@RequestMapping(value = "/update/strength_exercise", method = RequestMethod.POST)
 	public String updateStrengthExercise(HttpSession session, HttpServletResponse response, @RequestParam String exerciseName, @RequestParam String location,
 			@RequestParam String muscleGroup, @RequestParam(defaultValue = "0") int sets, @RequestParam(defaultValue = "0") int reps, 
-			@RequestParam String dateOfExercise, @RequestParam(defaultValue = "0") String favourite) 
+			@RequestParam String dateOfExercise, @RequestParam(defaultValue = "0") String favourite, @RequestParam int exerciseID) 
 			throws Exception {
 		
 		if(session.getAttribute("loggedIn") == null || (boolean)session.getAttribute("loggedIn") == false) {
@@ -290,9 +290,8 @@ public class ExerciseController {
 			}
 			
 			StrengthExercises se = new StrengthExercises();
-			int userid = (Integer)session.getAttribute("userID");
 			
-			se.update(userid, exerciseName, location, muscleGroup, sets, reps, dateOfExercise, favouriteBoolean);
+			se.update(exerciseID, exerciseName, location, muscleGroup, sets, reps, dateOfExercise, favouriteBoolean);
     		
     		//Add an attribute to the request to let them exercise page know there was a successful exercise creation. 
     		session.setAttribute("SuccessfulExerciseUpdate", "Strength exercise updated successfully!");

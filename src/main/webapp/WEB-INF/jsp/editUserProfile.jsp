@@ -19,8 +19,8 @@
   
    	 <jsp:include page="navigation.jsp"/>
     
-     <main role="main" class="flex-shrink-0">
-	     <div class ="container" >
+     <main role="main" class="flex-shrink-0 my-auto">
+	     <div class ="container py-3 border" >
 			<h3> Edit your details </h3>
 			
 			 <!-- 	The controller will add an 'error' attribute to the request in the instance any errors were encountered on the server-side that stopped the
@@ -44,119 +44,127 @@
 			<c:set var="user" value="${sessionScope.user}" scope="page"/> 
 	
 			<form id="form" action="/account/update" method="POST">
-				<div class="form-group pt-3">
-					<label for="firstname">First name</label>
-					<input type="text" class="form-control" name="firstName" id="firstname" value="${user.firstName}" maxlength="45" required>    
-				</div> 		
-					 	 		
-	 			<div class="form-group pt-3">
-	     			<label for="surname">Surname</label>
-	    			<input type="text" class="form-control" name="surname" id="surname" value="${user.surname}" maxlength="45" required>    
+				
+				<div class="row">
+					<div class="form-group pt-3 col">
+						<label for="firstname">First name</label>
+						<input type="text" class="form-control" name="firstName" id="firstname" value="${user.firstName}" maxlength="45" required>    
+					</div> 		
+						 	 		
+		 			<div class="form-group pt-3 col">
+		     			<label for="surname">Surname</label>
+		    			<input type="text" class="form-control" name="surname" id="surname" value="${user.surname}" maxlength="45" required>    
+		 	 		</div>
 	 	 		</div>
 	 	 		
-	 	 		<div class="form-group pt-3">
-	     			<label for="dob">Date of birth</label>
-	    			<input type="date" class="form-control" name="dateOfBirth" id="dob" value="${user.dateOfBirth}" onfocus="this.max=new Date().toISOString().split('T')[0]" required>
+	 	 		<div class="row">
+		 	 		<div class="form-group pt-3 col">
+		     			<label for="dob">Date of birth</label>
+		    			<input type="date" class="form-control" name="dateOfBirth" id="dob" value="${user.dateOfBirth}" onfocus="this.max=new Date().toISOString().split('T')[0]" required>
+		 	 		</div>
+		 	 		
+		     		<div class="form-group pt-3 col">
+		     			<label for="email">Email address</label>
+		    			<input type="email" class="form-control" name="email" id="email" value="${user.email}" maxlength="45" 
+		    			oninput="isEmailAvailableExcludingLoggedInUser(this.value);" required>
+		    			<div id="emailAlert"></div>
+		 	 		</div>
 	 	 		</div>
 	 	 		
-	     		<div class="form-group pt-3">
-	     			<label for="email">Email address</label>
-	    			<input type="email" class="form-control" name="email" id="email" value="${user.email}" maxlength="45" 
-	    			oninput="isEmailAvailableExcludingLoggedInUser(this.value);" required>
-	    			<div id="emailAlert"></div>
-	 	 		</div>
-	 	 		
-	 	  		<div class="form-group pt-3">
-	 	    		<label for="pwd">Password</label>
-	 	    		<input type="password" class="form-control" name="password" id="pwd" value="${user.password}" maxlength="45" required>
-	 	    		<div class="text-danger" id="pwdRegExError">  </div>
-	 	  		</div>
-	 	  		
-	 	  		<div class="form-group pt-3">
-		    		<label for="pwdCheck">Retype password</label>
-		    		<input type="password" class="form-control" name="pwdCheck" id="pwdCheck" value="${user.password}" maxlength="45" required>
-		    		<div class="text-danger" id="pwdMatchError">  </div>
+	 	 		<div class="row">
+		 	  		<div class="form-group pt-3 col">
+		 	    		<label for="pwd">Password</label>
+		 	    		<input type="password" class="form-control" name="password" id="pwd" value="${user.password}" maxlength="45" required>
+		 	    		<div class="text-danger" id="pwdRegExError">  </div>
+		 	  		</div>
+		 	  		
+		 	  		<div class="form-group pt-3 col">
+			    		<label for="pwdCheck">Retype password</label>
+			    		<input type="password" class="form-control" name="pwdCheck" id="pwdCheck" value="${user.password}" maxlength="45" required>
+			    		<div class="text-danger" id="pwdMatchError">  </div>
+			  		</div>
 		  		</div>
 		  		
-		  		<div class="form-group pt-3">
-	    			<label for="exp">What is your exercise experience?</label>
-	   				<select class="form-control" name="exerciseExperience" id="exp">
-	   					
-	  					<!--  Below statements check whether the user bean value of exercise experience is equal to the condition. If true, set the
-	  						  option as selected. Else, just use non-selected option.  -->
-	   					<c:choose>
-	   						<c:when test="${user.exerciseExperience eq 'None'}">
-	   							<option value="None" selected>None</option>
-	   						</c:when>
-	   						<c:otherwise>
-	   							<option value="None">None</option>
-	   						</c:otherwise>
-	   					</c:choose>
-	   					
-	   					<c:choose>
-	   						<c:when test="${user.exerciseExperience eq 'Novice'}">
-	   							<option value="Novice" selected>Novice</option>
-	   						</c:when>
-	   						<c:otherwise>
-	   							<option value="Novice">Novice</option>
-	   						</c:otherwise>
-	   					</c:choose>
-	   					
-	   					<c:choose>
-	   						<c:when test="${user.exerciseExperience eq 'Intermediate'}">
-	   							<option value="Intermediate" selected>Intermediate</option>
-	   						</c:when>
-	   						<c:otherwise>
-	   							<option value="Intermediate">Intermediate</option>
-	   						</c:otherwise>
-	   					</c:choose>
-	   					
-	   					<c:choose>
-	   						<c:when test="${user.exerciseExperience eq 'Experienced'}">
-	   							<option value="Experienced" selected>Experienced</option>
-	   						</c:when>
-	   						<c:otherwise>
-	   							<option value="Experienced">Experienced</option>
-	   						</c:otherwise>
-	   					</c:choose>
-	      					
-		    		</select>
-		 		</div>
-		  		
-		  		<!-- Create a javabean of the 'disabilites' class, which represents a list of disabilites a user my have. -->
-				<jsp:useBean class="eat3160.HLSP22.model.DisabilitiesBean" id="disa" scope="page"/>
-		  		
-		  		<div class="form-group pt-3">
-		    		<label for="disab">Do you have a disability? If yes, please specify</label>
-		    		<select class="form-select" aria-label="Default select example" name="disability" id="disabSelection">
-					 
-					 <!-- If the user disability value equals N/A, then have this as selected. If not, leave unselected. -->
-					 <c:choose> 
-					 	<c:when test="${user.disability eq 'N/A'}"> 
-					  		<option value="N/A" selected>No</option>
-					  	</c:when>
-					  	<c:otherwise>
-					  		<option value="N/A">No</option>
-					  	</c:otherwise>
-					  </c:choose>			
-					 
-					 <!-- List all of the entries stored in the disabilites beans array list. -->
-					  <c:forEach var="entry" items="${disa.disabilitesList}">
-					  	<c:choose>
-						  	<c:when test="${entry eq user.disability}">
-						  		<option value="${entry}" selected><c:out value="${entry}"/></option>
+		  		<div class="row">
+			  		<div class="form-group pt-3 col">
+		    			<label for="exp">What is your exercise experience?</label>
+		   				<select class="form-control" name="exerciseExperience" id="exp">
+		   					
+		  					<!--  Below statements check whether the user bean value of exercise experience is equal to the condition. If true, set the
+		  						  option as selected. Else, just use non-selected option.  -->
+		   					<c:choose>
+		   						<c:when test="${user.exerciseExperience eq 'None'}">
+		   							<option value="None" selected>None</option>
+		   						</c:when>
+		   						<c:otherwise>
+		   							<option value="None">None</option>
+		   						</c:otherwise>
+		   					</c:choose>
+		   					
+		   					<c:choose>
+		   						<c:when test="${user.exerciseExperience eq 'Novice'}">
+		   							<option value="Novice" selected>Novice</option>
+		   						</c:when>
+		   						<c:otherwise>
+		   							<option value="Novice">Novice</option>
+		   						</c:otherwise>
+		   					</c:choose>
+		   					
+		   					<c:choose>
+		   						<c:when test="${user.exerciseExperience eq 'Intermediate'}">
+		   							<option value="Intermediate" selected>Intermediate</option>
+		   						</c:when>
+		   						<c:otherwise>
+		   							<option value="Intermediate">Intermediate</option>
+		   						</c:otherwise>
+		   					</c:choose>
+		   					
+		   					<c:choose>
+		   						<c:when test="${user.exerciseExperience eq 'Experienced'}">
+		   							<option value="Experienced" selected>Experienced</option>
+		   						</c:when>
+		   						<c:otherwise>
+		   							<option value="Experienced">Experienced</option>
+		   						</c:otherwise>
+		   					</c:choose>
+		      					
+			    		</select>
+			 		</div>
+			  		
+			  		<!-- Create a javabean of the 'disabilites' class, which represents a list of disabilites a user my have. -->
+					<jsp:useBean class="eat3160.HLSP22.model.DisabilitiesBean" id="disa" scope="page"/>
+			  		
+			  		<div class="form-group pt-3 col">
+			    		<label for="disab">Do you have a disability? If yes, please specify</label>
+			    		<select class="form-select" aria-label="Default select example" name="disability" id="disabSelection">
+						 
+						 <!-- If the user disability value equals N/A, then have this as selected. If not, leave unselected. -->
+						 <c:choose> 
+						 	<c:when test="${user.disability eq 'N/A'}"> 
+						  		<option value="N/A" selected>No</option>
 						  	</c:when>
-			   				<c:otherwise>
-			   					<option value="${entry}"><c:out value="${entry}"/></option>
-			   				</c:otherwise>
-		   				</c:choose>
-		   			  </c:forEach>		
-					
-					<option value="Other">Other (disability not listed)</option>
-					
-					</select>
+						  	<c:otherwise>
+						  		<option value="N/A">No</option>
+						  	</c:otherwise>
+						  </c:choose>			
+						 
+						 <!-- List all of the entries stored in the disabilites beans array list. -->
+						  <c:forEach var="entry" items="${disa.disabilitesList}">
+						  	<c:choose>
+							  	<c:when test="${entry eq user.disability}">
+							  		<option value="${entry}" selected><c:out value="${entry}"/></option>
+							  	</c:when>
+				   				<c:otherwise>
+				   					<option value="${entry}"><c:out value="${entry}"/></option>
+				   				</c:otherwise>
+			   				</c:choose>
+			   			  </c:forEach>		
+						
+						<option value="Other">Other (disability not listed)</option>
+						
+						</select>
+			  		</div>
 		  		</div>
-		  		
 	 	  		
 	 	  		<div class="pt-3">
 	 	  			<button type="submit" value="Submit" class="btn btn-primary">Save profile changes</button>

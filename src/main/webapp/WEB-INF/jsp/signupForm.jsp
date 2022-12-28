@@ -19,8 +19,8 @@
  
    <jsp:include page="navigation.jsp"/>
     
-    <main role="main" class="flex-shrink-0">
-	    <div class ="container pt-3">
+    <main role="main" class="flex-shrink-0 w-50 mx-auto my-auto">
+	    <div class ="container py-3 border">
 	    	
 	    	<form id="form" action="/registration" method="POST">
 	    	
@@ -41,15 +41,16 @@
 			   			<button class="btn-close" aria-label="close" data-bs-dismiss="alert"></button>
 			   		</div>
 			   	</c:if>
-		 		
-		 		<div class="form-group pt-3">
-	    			<label for="firstname">First name</label>
-	   				<input type="text" class="form-control" name="firstName" id="firstname" placeholder="Input first name" maxlength="45" required>
-		 		</div>
-		 		
-		 		<div class="form-group pt-3">
-	    			<label for="surname">Surname</label>
-	   				<input type="text" class="form-control" name="surname" id="surname" placeholder="Input surname" maxlength="45" required>
+		 		<div class="row">
+			 		<div class="form-group pt-3 col">
+		    			<label for="firstname">First name</label>
+		   				<input type="text" class="form-control" name="firstName" id="firstname" placeholder="Input first name" maxlength="45" required>
+			 		</div>
+			 		
+			 		<div class="form-group pt-3 col">
+		    			<label for="surname">Surname</label>
+		   				<input type="text" class="form-control" name="surname" id="surname" placeholder="Input surname" maxlength="45" required>
+			 		</div>
 		 		</div>
 		 		
 		 		<div class="form-group pt-3">
@@ -68,16 +69,18 @@
 	   				<div id="emailAlert"></div>
 		 		</div>
 		 		
-		  		<div class="form-group pt-3">
-		    		<label for="pwd">Password</label>
-		    		<input type="password" class="form-control" name="password" id="pwd" placeholder="Password" maxlength="45" required>
-		    		<div class="text-danger" id="pwdRegExError">  </div>
-		  		</div>
-		  		
-		  		<div class="form-group pt-3">
-		    		<label for="pwdCheck">Retype password</label>
-		    		<input type="password" class="form-control" name="pwdCheck" id="pwdCheck" placeholder="Password" maxlength="45" required>
-		    		<div class="text-danger" id="pwdMatchError">  </div>
+		 		<div class="row">
+			  		<div class="form-group pt-3 col">
+			    		<label for="pwd">Password</label>
+			    		<input type="password" class="form-control" name="password" id="pwd" placeholder="Password" maxlength="45" required>
+			    		<div class="text-danger" id="pwdRegExError">  </div>
+			  		</div>
+			  		
+			  		<div class="form-group pt-3 col">
+			    		<label for="pwdCheck">Retype password</label>
+			    		<input type="password" class="form-control" name="pwdCheck" id="pwdCheck" placeholder="Password" maxlength="45" required>
+			    		<div class="text-danger" id="pwdMatchError">  </div>
+			  		</div>
 		  		</div>
 		  		
 		  		<div class="form-group pt-3">
@@ -115,7 +118,7 @@
 		  		
 		  		<div class="pt-3">
 			  		<p> Already have an account? </p>
-			  		<a class="btn btn-primary" href="/HLSP/session/loginform"> Log in </a> 
+			  		<a class="btn btn-primary" href="/loginform"> Log in </a> 
 		  		</div>
 	    	</form>
 	    	

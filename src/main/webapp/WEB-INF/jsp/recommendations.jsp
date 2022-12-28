@@ -17,8 +17,8 @@
  
     <jsp:include page="navigation.jsp"/>
     
-    <main role="main" class="flex-shrink-0">
-	     <div class="container pt-3">
+    <main role="main" class="flex-shrink-0 my-auto">
+	     <div class="container py-3 border">
 	     	
 	     	<h3> Recommendations table</h3>
 	     	<div class="table-responsive-sm pt-3">  

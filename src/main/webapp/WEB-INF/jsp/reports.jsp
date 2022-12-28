@@ -9,28 +9,27 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Log in</title>
+    <title>Reports</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
   </head>
   <body class="d-flex flex-column h-100">
-    
-    
+
     <jsp:include page="navigation.jsp"/>
     
-    <main role="main" class="flex-shrink-0">
-	    <div class ="container pt-3">
+    <main role="main" class="flex-shrink-0 my-auto">
+	    <div class ="container pt-3 border">
 	     
 		  	<form action="#">
 			  	<label for="selectGraph"> Choose a graph: </label>
-			  	<select name="selectGraph" id="selectGraph"> 
+			  	<select name="selectGraph" id="selectGraph" class="form-select" aria-label="Select graph type"> 
 			  		<option value="strength">Number of strength-training exercises completed</option>
 			  		<option value="aerobic">Number of aerobic exercises completed</option>
 			  		<option value="exercises">Number of exercises completed</option>
 			  		<option value="exercisegoal">Number of exercises completed against the set goal over the most recent week</option>
 			  	</select>
-				<br>
+			  	
 				<label class="pt-3" for="selectPeriod"> Choose time period: </label>
-			  	<select name="selectPeriod" id="selectPeriod"> 
+			  	<select name="selectPeriod" id="selectPeriod" class="form-select" aria-label="Select graph period"> 
 			  		<option value="7days">Last 7 days</option>
 			  		<option value="30days">Last 30 days</option>
 			  	</select>

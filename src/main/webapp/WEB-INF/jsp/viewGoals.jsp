@@ -17,21 +17,23 @@
   
    	 <jsp:include page="navigation.jsp"/>
     
-    <main role="main" class="flex-shrink-0">
-	     <div class ="container" >
+    <main role="main" class="flex-shrink-0 w-50 mx-auto my-auto">
+	     <div class ="container py-3 border" >
 			<h3> Exercise goals </h3>
 			
 			<!-- Store the java bean 'goals' from the request scope as a variable named 'goals'. --> 
 			<c:set var="goals" value="${requestScope.goals}" scope="page"/> 
 			
-			<div class="form-group pt-3">
-	 					<label for="Sbepw">Strength based exercises per week:</label>
-						<input type="text" class="form-control" name="Sbepw" id="Sbepw" value="${goals.weeklyStrengthGoal}" readonly>     
-				</div>
-		
-	 		<div class="form-group pt-3">
-	   			<label for="Abepw">Aerobic exercises per week:</label>
-	  			<input type="text" class="form-control" name="Abepwl" id="Abepwl" value="${goals.weeklyAerobicGoal}" readonly>    
+			<div class="row">
+				<div class="form-group pt-3 col">
+		 					<label for="Sbepw">Strength based exercises per week:</label>
+							<input type="text" class="form-control" name="Sbepw" id="Sbepw" value="${goals.weeklyStrengthGoal}" readonly>     
+					</div>
+			
+		 		<div class="form-group pt-3 col">
+		   			<label for="Abepw">Aerobic exercises per week:</label>
+		  			<input type="text" class="form-control" name="Abepwl" id="Abepwl" value="${goals.weeklyAerobicGoal}" readonly>    
+		 		</div>
 	 		</div>
 	  			
 	  		<div class="pt-3">

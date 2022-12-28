@@ -17,8 +17,8 @@
   
    	 <jsp:include page="navigation.jsp"/>
     
-     <main role="main" class="flex-shrink-0">
-	     <div class ="container" >
+     <main role="main" class="flex-shrink-0 my-auto">
+	     <div class ="container py-3 border" >
 	     	
 			<form action="/exercises/update/aerobic_exercise" method="POST">
 	    		
@@ -27,12 +27,12 @@
 	    	<!-- Store the java bean 'aerobicExerciseBean' from the request scope as a variable named 'exercise'. --> 
 			<c:set var="exercise" value="${requestScope.aerobicExerciseBean}" scope="page"/> 
 	    		
-	    		<div class="form-group">
+	    		<div class="form-group py-3">
 	    			<label for="ExerciseN">Exercise name</label>
 	   				<input type="text" class="form-control" name="exerciseName" id="exerciseName" value="${exercise.exerciseName}" required>
 		 		</div>
 		 		
-		 		<div class="form-group pt-3">
+		 		<div class="form-group">
 		    		<label>Where did you exercise?</label>
 		    		<div class="form-check">
 		    		<!-- The below choose statements are used to determine what radio button should be set as checked, dependent on whether the
@@ -88,18 +88,18 @@
 					</div>
 		  		
 		  		</div>
-		 		
-		  		<div class="form-group">
+		 		 
+		  		<div class="form-group pt-3">
 		    		<label for="stepC">Amount of steps</label>
 		    		<input type="number" class="form-control" name="steps" id="steps" min="0" value="${exercise.steps}">
 		  		</div>
 		  		
-		  		<div class="form-group">
+		  		<div class="form-group pt-3">
 		    		<label for="date">Choose exercise date</label>
 		    		<input type="date" class="form-control" name="dateOfExercise" id="date" value="${exercise.dateOfExercise}" onfocus="this.max=new Date().toISOString().split('T')[0]" required>
 		  		</div>
 		  		
-	  			<div class="form-check form-switch pt-3">			
+	  			<div class="form-check form-switch py-3">			
 	  				<c:choose>
 	  					<c:when test="${exercise.favourite eq 'true'}">
 						  <input class="form-check-input" type="checkbox" name="favourite" id="favouriteSwitch" checked>

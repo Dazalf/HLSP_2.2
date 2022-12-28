@@ -17,8 +17,8 @@
     
     <jsp:include page="navigation.jsp"/>
     
-    <main role="main" class="flex-shrink-0">
-	    <div class ="container pt-3">
+    <main role="main" class="flex-shrink-0 w-50 mx-auto my-auto">
+	    <div class="container pt-3 border">
 	    
 		    <h3> Log in form </h3>
 		    
@@ -43,22 +43,23 @@
 	    	</c:if>
 	    	
 	    	<form action="/login" method="POST">
-	    	
-	    		<div class="form-group">
-	    			<label for="email">Email address</label>
-	   				<input type="email" class="form-control" name="email" id="email" placeholder="Input email" maxlength="45" required>
-		 		</div>
-		 		
-		  		<div class="form-group pt-3">
-		    		<label for="pwd">Password</label>
-		    		<input type="password" class="form-control" name="password" id="pwd" placeholder="Password" maxlength="45" required>
+	    		
+	    		<div class="row pt-3">
+		    		<div class="form-group col">
+		    			<label for="email">Email address</label>
+		   				<input type="email" class="form-control" name="email" id="email" placeholder="Email" maxlength="45" required>
+			 		</div>
+			 		
+			  		<div class="form-group col">
+			  			<label for="pwd">Password</label>
+			    		<input type="password" class="form-control" name="password" id="pwd" placeholder="Password" maxlength="45" required>
+			  		</div>
 		  		</div>
-		  		
 		  		<div class="pt-3">
 		  			<button type="submit" value="Submit" class="btn btn-primary">Submit</button>
 		  		</div>
 		  		
-		  		<div class="pt-3">  
+		  		<div class="py-3">  
 			  		<p> Don't have an account? </p>
 			  		<a class="btn btn-primary" href="/signupform"> Sign up </a>  
 		  		</div>

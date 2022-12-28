@@ -16,8 +16,8 @@
     
 	<jsp:include page="navigation.jsp"/>
 	
-	<main role="main" class="flex-shrink-0">
-	    <div class ="container pt-3">
+	<main role="main" class="flex-shrink-0 my-auto">
+	    <div class ="container py-2 border">
 	    
 		    <h3> Edit strength exercise </h3>
 		    
@@ -30,6 +30,18 @@
 	    			<label for="ExerciseN">Exercise name</label>
 	   				<input type="text" class="form-control" name="exerciseName" id="exerciseName" value="${exercise.exerciseName}" required>
 		 		</div>
+		 			
+		 		<div class="row"> 
+			  		<div class="form-group pt-3 col">
+			    		<label for="sets">Amount of sets</label>
+			    		<input type="number" class="form-control" name="sets" id="sets" min="0" value="${exercise.sets}" required>
+			  		</div>
+			  		
+			  		<div class="form-group pt-3 col">
+			    		<label for="reps">Amount of reps</label>
+			    		<input type="number" class="form-control" name="reps" id="reps" min="0" required value="${exercise.reps}">
+			  		</div>
+		  		</div>
 		 		
 		 		<div class="form-group pt-3">
 		    		<label>Where did you exercise?</label>
@@ -192,16 +204,6 @@
 	   					</c:choose>
 					</div>
 		  		
-		  		</div>
-		 		
-		  		<div class="form-group pt-3">
-		    		<label for="sets">Amount of sets</label>
-		    		<input type="number" class="form-control" name="sets" id="sets" min="0" value="${exercise.sets}" required>
-		  		</div>
-		  		
-		  		<div class="form-group pt-3">
-		    		<label for="reps">Amount of reps</label>
-		    		<input type="number" class="form-control" name="reps" id="reps" min="0" required value="${exercise.reps}">
 		  		</div>
 		  		
 		  		<div class="form-group pt-3">

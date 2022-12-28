@@ -17,8 +17,8 @@
   
    	 <jsp:include page="navigation.jsp"/>
     
-     <main role="main" class="flex-shrink-0">
-	     <div class ="container" >
+     <main role="main" class="flex-shrink-0 my-auto">
+	     <div class ="container py-3 border" >
 			<h3> View your details </h3>
 			
 	<!--    This shows a message letting the user know their account has been created successfully. The session attribute is created -->
@@ -35,40 +35,46 @@
 			<c:set var="user" value="${sessionScope.user}" scope="page"/>
 			 
 			 <!-- Using the bean getter methods, display the users data within the view -->
-			<div class="form-group pt-3">
-				<label for="firstname">First name</label>
-				<input type="text" class="form-control" name="fn" id="firstname" value="${user.firstName}" readonly>    
-			</div> 		
-				 	 		
-			<div class="form-group pt-3">
-	   			<label for="surname">Surname</label>
-	  			<input type="text" class="form-control" name="sn" id="surname" value="${user.surname}" readonly>    
+			<div class="row">
+				<div class="form-group pt-3 col">
+					<label for="firstname">First name</label>
+					<input type="text" class="form-control" name="fn" id="firstname" value="${user.firstName}" readonly>    
+				</div> 		
+					 	 		
+				<div class="form-group pt-3 col">
+		   			<label for="surname">Surname</label>
+		  			<input type="text" class="form-control" name="sn" id="surname" value="${user.surname}" readonly>    
+		 		</div>
 	 		</div>
 	 		
-	 		<div class="form-group pt-3">
-	   			<label for="dob">Date of birth</label>
-	  			<input type="date" class="form-control" name="dob" id="dob" value="${user.dateOfBirth}" readonly>
+	 		<div class="row">
+		 		<div class="form-group pt-3 col">
+		   			<label for="dob">Date of birth</label>
+		  			<input type="date" class="form-control" name="dob" id="dob" value="${user.dateOfBirth}" readonly>
+		 		</div>
+		 		
+		   		<div class="form-group pt-3 col">
+		   			<label for="email">Email address</label>
+		  			<input type="email" class="form-control" name="email" id="email" value="${user.email}" readonly>
+		 		</div>
 	 		</div>
 	 		
-	   		<div class="form-group pt-3">
-	   			<label for="email">Email address</label>
-	  			<input type="email" class="form-control" name="email" id="email" value="${user.email}" readonly>
+	 		<div class="row">
+		  		<div class="form-group pt-3 col">
+		   			<label for="exp">Exercise experience</label>	
+		    		<input type="text" class="form-control" name="exp" id="exp" value="${user.exerciseExperience}" readonly> 
+		 		</div>
+		  		
+		  		<div class="form-group pt-3 col">
+		    		<label for="disab">Disability</label>
+		    		<input type="text" class="form-control" name="disab" id="disabSelection" value="${user.disability}" readonly> 
+		 		</div>
 	 		</div>
 	 		
 	  		<div class="form-group pt-3">
 	    		<label for="pwd">Password</label>
 	    		<input type="password" class="form-control" name="pwd" id="pwd" value="${user.password}" readonly>
 	  		</div>
-	  		
-	  		<div class="form-group pt-3">
-	   			<label for="exp">Exercise experience</label>	
-	    		<input type="text" class="form-control" name="exp" id="exp" value="${user.exerciseExperience}" readonly> 
-	 		</div>
-	  		
-	  		<div class="form-group pt-3">
-	    		<label for="disab">Disability</label>
-	    		<input type="text" class="form-control" name="disab" id="disabSelection" value="${user.disability}" readonly> 
-	 		</div>
 	  			
 	  		<div class="pt-3">
 	  			<a class="btn btn-primary" href="/account/edit" role="button">Edit profile</a>

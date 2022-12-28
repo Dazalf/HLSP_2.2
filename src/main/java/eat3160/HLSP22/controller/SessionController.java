@@ -29,7 +29,7 @@ public class SessionController {
 		}else {
 			//If the user isn't logged in, send an 404 error and return null as the 'view'. This ensures the user cannot access
 			//the loginForm if they are already logged in. 
-			response.sendError(404);
+			response.sendError(403);
 			return null;
 		}		
 	}

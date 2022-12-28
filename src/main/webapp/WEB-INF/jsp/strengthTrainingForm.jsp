@@ -17,8 +17,8 @@
     
 	<jsp:include page="navigation.jsp"/>
 	
-	<main role="main" class="flex-shrink-0">
-    	<div class ="container pt-3">
+	<main role="main" class="flex-shrink-0 my-auto">
+    	<div class="container py-3">
     
 		    <h3> Add strength training exercise </h3>
 	    	
@@ -28,6 +28,18 @@
 	    			<label for="exerciseName">Exercise name</label>
 	   				<input type="text" class="form-control" name="exerciseName" id="exerciseName" placeholder="Input exercise name" required>
 		 		</div>
+		 		
+		 		<div class="row py-3">
+			  		<div class="form-group col">
+			    		<label for="sets">Amount of sets</label>
+			    		<input type="number" class="form-control" name="sets" id="sets" min="0" required>
+			  		</div>
+			  		
+			  		<div class="form-group col">
+			    		<label for="reps">Amount of reps</label>
+			    		<input type="number" class="form-control" name="reps" id="reps" min="0" required>
+			  		</div>
+		  		</div>
 		 		
 		 		<div class="form-group pt-3">
 		    		<label>Where did you exercise?</label>
@@ -90,17 +102,7 @@
 					  </label>
 					</div>
 		  		</div>
-		 		
-		  		<div class="form-group pt-3">
-		    		<label for="sets">Amount of sets</label>
-		    		<input type="number" class="form-control" name="sets" id="sets" min="0" required>
-		  		</div>
-		  		
-		  		<div class="form-group pt-3">
-		    		<label for="reps">Amount of reps</label>
-		    		<input type="number" class="form-control" name="reps" id="reps" min="0" required>
-		  		</div>
-		  		
+			  		  		
 		  		<div class="form-group pt-3">
 		    		<label for="date">Choose exercise date</label>
 		    		<input type="date" class="form-control" name="dateOfExercise" id="date" value="${requestScope.todaysDate}" onfocus="this.max=new Date().toISOString().split('T')[0]" required>

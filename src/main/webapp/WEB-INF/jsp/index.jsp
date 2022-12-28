@@ -51,17 +51,17 @@
 		     	<div class="row">
 		     		<div class="col">
 						<div class="card text-white bg-success mb-3" style="max-width: 25rem;">
-						  <div class="card-header bg-dark">Exercise routine</div>
+						  <div class="card-header">Exercise routine</div>
 						  <div class="card-body">
 						  	<h5 class="card-title">Exercises</h5>
-						    <p class="card-text">Provide rich detail about your exercises in your exercise routine through our interface. The more we know,
+						    <p class="card-text">You can provide rich detail about your exercises in your exercise routine through our interface. The more we know,
 						    the more personalised the recommendations. You can easily view all of your exercises.  </p>
 						  </div>
 						</div>	     			
 		     		</div>
 		     		<div class="col">
 						<div class="card text-white bg-success mb-3" style="max-width: 25rem;">
-						  <div class="card-header bg-dark">Exercise routine</div>
+						  <div class="card-header">Exercise routine</div>
 						  <div class="card-body">
 						  	<h5 class="card-title">Goals</h5>
 						    <p class="card-text">We provide you an easy way to for you to set and track your goals. Not too sure about what goals to choose?
@@ -71,7 +71,7 @@
 		     		</div>
 		     		<div class="col">
 						<div class="card text-white bg-success mb-3" style="max-width: 25rem;">
-						  <div class="card-header bg-dark">Exercise routine</div>
+						  <div class="card-header">Exercise routine</div>
 						  <div class="card-body">
 						  	<h5 class="card-title">Disabilites</h5>
 						    <p class="card-text">Have any disabilities? We provide you with the option to specify these when setting up your account. This
@@ -84,7 +84,7 @@
 		     	<div class="row">
 		     		<div class="col">
 						<div class="card text-white bg-success mb-3 text-center" style="max-width: 25rem;">
-						  <div class="card-header bg-dark">Analytics</div>
+						  <div class="card-header">Analytics</div>
 						  <div class="card-body">
 						  	<h5 class="card-title">Recommendations</h5>
 						    <p class="card-text"> The more we know, the more you benefit! Our algorithms will aggregate, review and analyse the information
@@ -95,17 +95,17 @@
 		     		</div>
 		     		<div class="col">
 						<div class="card text-white bg-success mb-3 text-center" style="max-width: 25rem;">
-						  <div class="card-header bg-dark">Analytics</div>
+						  <div class="card-header">Analytics</div>
 						  <div class="card-body">
 						  	<h5 class="card-title">Reports</h5>
-						    <p class="card-text">With the collated data you've provided, we transform it into easy-to-read visualizations to enable to draw your 
+						    <p class="card-text">With the collated data you've provided, we transform it into easy-to-read visualizations to enable you to draw your 
 						    own insights into your data!</p>
 						  </div>
 						</div>	         		
 		     		</div>
 		     		   <div class="col">
 						<div class="card text-white bg-success mb-3 text-center" style="max-width: 25rem;">
-						  <div class="card-header bg-dark">Usability</div>
+						  <div class="card-header">Usability</div>
 						  <div class="card-body">
 						  	<h5 class="card-title">Website design</h5>
 						    <p class="card-text">We've endeavoured to make our website as simple and easy to use as possible, ensuring that your

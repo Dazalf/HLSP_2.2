@@ -19,8 +19,8 @@
  
     <jsp:include page="navigation.jsp"/>
    
-   	<main role="main" class="flex-shrink-0">
-	     <div class ="container pt-3">
+   	<main role="main" class="flex-shrink-0 my-auto">
+	     <div class="container py-3 border">
 	     
 	     	<h3 class="pb-3"> Exercises </h3>
 	    	
@@ -42,69 +42,75 @@
 	     	<label for="datepicker">Filter by date:</label>
 			<input type="date" id="datepicker" name="datepicker" value="${requestScope.todaysDate}" onchange="updateTables(this.value);"> 
 	     	
-	     	<div class="table-responsive-sm"> 	
-				<table class="table table-hover table-striped caption-top">
-				<caption>Aerobic exercises</caption>
-				  <thead class="table-light">
-				    <tr>
-				      <th scope="col">Exercise name</th>
-				      <th scope="col">Location</th>
-				      <th scope="col">Step count</th>
-				      <th scope="col">Favourited</th>
-				      <th scope="col"></th>
-				    </tr>
-				  </thead>
-				  <tbody id="aerobicDisplay">
-				  	<c:forEach var="exercise" items="${requestScope.aerobicExercises}">
-				  		<tr>
-					  	  <td><c:out value="${exercise.exerciseName}"/></td>
-					      <td><c:out value="${exercise.location}"/></td>
-					      <td><c:out value="${exercise.steps}"/></td>	
-					      <td><c:out value="${exercise.favourite}"/></td>	
-					      <td><a class="btn btn-secondary btn-sm" href="/exercises/edit/aerobic_exercise?id=${exercise.id}" role="button">Edit</a></td>	
-				  		</tr>
-				  	</c:forEach>
-				  </tbody>
-				</table>
-			</div>
+	     	<div class="row"> 
+		     	<div class="col-12 py-3">
+			     	<div class="table-responsive-sm"> 	
+						<table class="table table-hover table-striped caption-top">
+						<caption>Aerobic exercises</caption>
+						  <thead class="table-light">
+						    <tr>
+						      <th scope="col">Exercise name</th>
+						      <th scope="col">Location</th>
+						      <th scope="col">Step count</th>
+						      <th scope="col">Favourited</th>
+						      <th scope="col"></th>
+						    </tr>
+						  </thead>
+						  <tbody id="aerobicDisplay">
+						  	<c:forEach var="exercise" items="${requestScope.aerobicExercises}">
+						  		<tr>
+							  	  <td><c:out value="${exercise.exerciseName}"/></td>
+							      <td><c:out value="${exercise.location}"/></td>
+							      <td><c:out value="${exercise.steps}"/></td>	
+							      <td><c:out value="${exercise.favourite}"/></td>	
+							      <td><a class="btn btn-secondary btn-sm" href="/exercises/edit/aerobic_exercise?id=${exercise.id}" role="button">Edit</a></td>	
+						  		</tr>
+						  	</c:forEach>
+						  </tbody>
+						</table>
+					</div>
+				
+					<div class="pt-1"> 
+						<a class="btn btn-light" href="/exercises/form/aerobic_exercise"> Add aerobic exercise </a>
+					</div> 
+				</div>
 			
-			<div class="pt-1"> 
-				<a class="btn btn-light" href="/exercises/form/aerobic_exercise"> Add aerobic exercise </a>
-			</div> 
 			
-	     	<div class="table-responsive-sm"> 
-				<table class="table table-hover table-striped caption-top">
-				 <caption>Strength training exercises</caption>	
-				 <thead class="table-light">
-			      <tr>
-				     <th scope="col">Exercise name</th>
-				     <th scope="col">Location</th>
-					 <th scope="col">Muscle group</th>
-					 <th scope="col">Sets</th>
-					 <th scope="col">Reps</th>
-					 <th scope="col">Favourited</th>
-					 <th scope="col"></th>
-				  </tr>
-				  </thead>
-				  <tbody id="strengthDisplay">
-				  	<c:forEach var="exercise" items="${requestScope.strengthExercises}">
-					    <tr>
-					      <td><c:out value="${exercise.exerciseName}"/></td>
-					      <td><c:out value="${exercise.location}"/></td>
-					      <td><c:out value="${exercise.muscleGroup}"/></td>
-					      <td><c:out value="${exercise.sets}"/></td>
-					      <td><c:out value="${exercise.reps}"/></td>
-					      <td><c:out value="${exercise.favourite}"/></td>
-						  <td><a class="btn btn-secondary btn-sm" href="/exercises/edit/strength_exercise?id=${exercise.id}" role="button">Edit</a></td>	
-					    </tr>
-				    </c:forEach>
-				  </tbody>
-				</table>
+				<div class="col-12 py-3">
+			     	<div class="table-responsive-sm"> 
+						<table class="table table-hover table-striped caption-top">
+						 <caption>Strength training exercises</caption>	
+						 <thead class="table-light">
+					      <tr>
+						     <th scope="col">Exercise name</th>
+						     <th scope="col">Location</th>
+							 <th scope="col">Muscle group</th>
+							 <th scope="col">Sets</th>
+							 <th scope="col">Reps</th>
+							 <th scope="col">Favourited</th>
+							 <th scope="col"></th>
+						  </tr>
+						  </thead>
+						  <tbody id="strengthDisplay">
+						  	<c:forEach var="exercise" items="${requestScope.strengthExercises}">
+							    <tr>
+							      <td><c:out value="${exercise.exerciseName}"/></td>
+							      <td><c:out value="${exercise.location}"/></td>
+							      <td><c:out value="${exercise.muscleGroup}"/></td>
+							      <td><c:out value="${exercise.sets}"/></td>
+							      <td><c:out value="${exercise.reps}"/></td>
+							      <td><c:out value="${exercise.favourite}"/></td>
+								  <td><a class="btn btn-secondary btn-sm" href="/exercises/edit/strength_exercise?id=${exercise.id}" role="button">Edit</a></td>	
+							    </tr>
+						    </c:forEach>
+						  </tbody>
+						</table>
+					</div>
+					<div class="pt-1">
+						<a class="btn btn-light" href="/exercises/form/strength_exercise"> Add strength training exercise </a> 
+					</div>
+				</div>
 			</div>
-			<div class="pt-1">
-				<a class="btn btn-light" href="/exercises/form/strength_exercise"> Add strength training exercise </a> 
-			</div>
-		
 		</div>
 	</main>
 	
