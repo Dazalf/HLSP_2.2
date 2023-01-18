@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.SessionAttributes;
 
 import com.google.gson.Gson;
 
@@ -30,6 +31,7 @@ import eat3160.HLSP22.model.StrengthExercises;
 
 @RequestMapping("/exercises*")
 @Controller
+@SessionAttributes("todaysDate")
 public class ExerciseController {
 	
 	@ModelAttribute("todaysDate")
@@ -356,6 +358,10 @@ public class ExerciseController {
 	public void updateAerobicExercisesAJAX(HttpSession session, HttpServletResponse response, Model model, @RequestParam String date) 
 			throws Exception {
 		
+		
+		//Update the session attribute date with the selected date by the user. 
+		model.addAttribute("todaysDate", LocalDate.parse(date));
+		
 		response.setContentType("application/json;charset=UTF-8");
         PrintWriter out = response.getWriter();
        
@@ -375,6 +381,9 @@ public class ExerciseController {
 	@RequestMapping(value = "/updateStrengthTable", method = RequestMethod.POST)
 	public void updateStrengthExercisesAJAX(HttpSession session, HttpServletResponse response, Model model, @RequestParam String date) 
 			throws Exception {
+		
+		//Update the session attribute date with the selected date by the user. 	
+		model.addAttribute("todaysDate", LocalDate.parse(date));
 		
 		response.setContentType("application/json;charset=UTF-8");
         PrintWriter out = response.getWriter();
